@@ -1,0 +1,41 @@
+<mat-card>
+
+  <mat-card-title>
+    Selecione
+  </mat-card-title>
+
+  <mat-card-content>
+
+    <section>
+        <p>Selecione os campos que você precisa:</p>
+        <section>
+            <mat-checkbox [(ngModel)]="showNome">Nome</mat-checkbox>
+            <mat-checkbox [(ngModel)]="showEndereco">Endereco</mat-checkbox>
+            <mat-checkbox [(ngModel)]="showTelefone">Telefone</mat-checkbox>
+            <mat-checkbox [(ngModel)]="showIdade">Idade</mat-checkbox>
+        </section>
+    </section>
+
+    <br><br>
+
+    <section>
+        <mat-form-field *ngIf="showNome">
+            <input matInput placeholder="Digite seu nome">
+        </mat-form-field>
+        <mat-form-field *ngIf="showEndereco">
+            <input matInput placeholder="Endereço">
+        </mat-form-field>
+        <mat-form-field *ngIf="showTelefone">
+            <input matInput placeholder="Telefone">
+        </mat-form-field>
+        <mat-form-field *ngIf="showIdade">
+            <input matInput placeholder="Idade" type="number">
+        </mat-form-field>                        
+    </section>
+
+  </mat-card-content>
+
+  <mat-card-footer>
+  </mat-card-footer>
+  
+</mat-card>

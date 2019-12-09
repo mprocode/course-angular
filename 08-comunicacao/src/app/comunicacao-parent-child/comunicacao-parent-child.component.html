@@ -1,0 +1,16 @@
+
+<div class="button-row">
+    <p>Variavel local no template:</p>
+    <button mat-button color="primary" (click)="cronometro.start()" >Iniciar</button>
+    <button mat-button color="accent" (click)="cronometro.stop()" >Parar</button>
+    <button mat-button color="warn" (click)="cronometro.clear()" >Zerar</button>
+</div>
+
+<app-cronometro #cronometro></app-cronometro>
+
+<div class="button-row">
+    <p>Utilizando ViewChild:</p>
+    <button mat-button color="primary" (click)="iniciarClick()" >Iniciar</button>
+    <button mat-button color="accent" (click)="pararClick()" >Parar</button>
+    <button mat-button color="warn" (click)="zerarClick()" >Zerar</button>
+</div>

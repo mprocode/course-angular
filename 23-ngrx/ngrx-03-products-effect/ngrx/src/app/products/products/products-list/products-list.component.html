@@ -1,0 +1,20 @@
+<mat-list>
+  <h3 mat-subheader>PRODUCTS (Total: {{products?.length}})</h3>
+  <mat-list-item *ngFor="let prod of products">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>{{prod.name}}</h4>
+    <div  mat-line >
+      Stock: {{prod.stock}} | Price: {{prod.price}}
+    </div>    
+    <div  mat-line *ngIf="prod.departments">
+      Departments: 
+      <span *ngFor="let d of prod?.departments" class="department">{{d?.name}}</span>
+    </div>
+    <button mat-icon-button color="accent"  (click)="del(prod)">
+        <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="edit(prod)">
+        <mat-icon>edit</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

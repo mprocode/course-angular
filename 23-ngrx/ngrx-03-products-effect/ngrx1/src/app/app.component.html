@@ -1,0 +1,36 @@
+<mat-drawer-container fxFill >
+
+    <mat-drawer #drawer  mode="side">
+        <div class="side-menu">
+            <mat-nav-list> 
+                <!--a mat-list-item class="menu-item" routerLink="home" routerLinkActive="active-menu-item">
+                    <mat-icon class="menu-icon">home</mat-icon>
+                    Home
+                </a-->
+                <a mat-list-item class="menu-item" routerLink="products" routerLinkActive="active-menu-item">
+                    <mat-icon class="menu-icon">photo_library</mat-icon>
+                    Products
+                </a>
+                <a mat-list-item class="menu-item" routerLink="departments" routerLinkActive="active-menu-item">
+                    <mat-icon class="menu-icon">timeline</mat-icon>
+                    Departments 
+                </a> 
+                <!-- a mat-list-item class="menu-item" routerLink="people" routerLinkActive="active-menu-item">
+                    <mat-icon class="menu-icon">people_outline</mat-icon>
+                    People 
+                </a -->
+            </mat-nav-list> 
+        </div>
+    </mat-drawer>
+    
+    <mat-toolbar color="primary">
+        <button mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+        </button>    
+        <span>Products</span>
+    </mat-toolbar>
+    
+    <router-outlet></router-outlet>
+
+</mat-drawer-container>
+      

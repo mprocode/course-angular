@@ -1,0 +1,39 @@
+<div fxFill >
+  <form [formGroup]="productForm" fxLayout="column" fxLayoutAlign="space-between stretch" (ngSubmit)="onSubmit()">
+
+    <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
+
+      <mat-form-field fxFlex="40">
+          <input matInput placeholder="Product name" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field fxFlex="30">
+        <mat-select placeholder="Departments" formControlName="departments" multiple>
+          <mat-select-trigger>
+            {{formDepartments.value ? formDepartments.value[0]?.name : ''}}
+            <span *ngIf="formDepartments.value?.length > 1">
+              ( +{{formDepartments.value.length - 1}} other(s) )
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let dep of departments" [value]="dep">{{dep.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="15">
+        <input matInput placeholder="Stock" type="number" formControlName="stock">
+      </mat-form-field>
+
+      <mat-form-field fxFlex="15">
+        <input matInput placeholder="Price" type="number" formControlName="price">
+        <span matPrefix>$&nbsp;</span>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start" >
+      <button mat-button color="primary" type="submit" [disabled]="!productForm.valid">Save</button>
+      <button mat-button color="warn"  type="reset" (click)="cancel()">Cancel</button>
+    </div>
+
+  </form>
+</div>
+

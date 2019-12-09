@@ -1,0 +1,30 @@
+<p>
+  {{ 1 + 1}}
+</p>
+
+<p>{{ nome }}</p>
+<p>{{ sobrenome }}</p>
+
+<h1>Cliente</h1>
+<p>Nome: {{cliente.nome}}</p>
+<p>Sobrenome: {{cliente.sobrenome}}</p>
+<p>Endereco: {{cliente.endereco}}</p>
+<p>Idade: {{cliente.idade}}</p>
+
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Cliente</mat-card-title>
+    <mat-card-subtitle>{{cliente.nome}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Sobrenome: {{cliente.sobrenome}}</p>
+    <p>Endereco: {{cliente.endereco}}</p>
+    <p>Idade: {{cliente.idade}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary">OK</button>
+    <button mat-button color="accent">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
+

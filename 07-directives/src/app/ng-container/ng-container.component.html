@@ -1,0 +1,57 @@
+
+
+<ul>
+  <li *ngFor="let user of users">{{user.login}}</li>
+</ul>
+
+<!-- Filtering by role ADMIN -->
+
+<!-- ERRO =>> -->
+<!--
+<ul>
+  <li *ngFor="let user of users" *ngIf="user.role == 'admin'">{{user.login}}</li>
+</ul>
+-->
+<p>Filtering by role ADMIN </p>
+<ul>
+  <li *ngFor="let user of users">
+    <span *ngIf="user.role == 'admin'">{{user.login}}</span>
+  </li>
+</ul>
+<br>
+
+<p>Filtering by role ADMIN </p>
+<ul>
+  <ng-container *ngFor="let user of users">
+    <li *ngIf="user.role == 'admin'">{{user.login}}</li>
+  </ng-container>
+</ul>
+
+<hr>
+
+<mat-list>
+    <h3 mat-subheader>Users</h3>
+    <mat-list-item *ngFor="let user of users">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <h4 mat-line>{{user.login}}</h4>
+      <h3 mat-line>{{user.role}}</h3>
+      <p mat-line> {{user.lastLogin | date}} </p>
+      <button mat-stroked-button color="primary">Primary</button>
+      <!-- mat-divider></mat-divider -->
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <!-- Repeat mat-divider for each user-->
+
+    <h3 mat-subheader>Users</h3>
+    <ng-container *ngFor="let user of users">
+        <mat-list-item>
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <h4 mat-line>{{user.login}}</h4>
+            <h3 mat-line>{{user.role}}</h3>
+            <p mat-line> {{user.lastLogin | date}} </p>
+            <button mat-stroked-button color="primary">Primary</button>
+          </mat-list-item>      
+          <mat-divider></mat-divider>          
+    </ng-container>
+  </mat-list>

@@ -1,0 +1,185 @@
+<div layout="column" layout-fill>
+  <div align="center" layout="row" layout-align="center center">
+
+    <mat-card class="info-card mat-elevation-z8" flex="80" style="margin-top: 60px;width: 800px;;">
+
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle>
+      </mat-card-subtitle>
+
+      <mat-card-content fxLayout="column" fxLayoutAlign="stretch" >
+        
+        <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="start stretch" >
+
+          <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between  start">
+            <mat-form-field fxFlex="45" >  
+              <input matInput type="text" formControlName="firstName"
+                class="form-control" value="" placeholder="First Name" >
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.firstName.errors?.required">
+                Please enter the First Name
+              </mat-error>
+              <mat-error *ngIf="clientForm.controls.firstName.hasError('minlength')">
+                <!-- ({{clientForm.controls.firstName.errors | json}}) -->
+                First name must be 4 or more characters
+                (actual: {{clientForm.controls.firstName.errors.minlength.actualLength}})
+              </mat-error>
+              <!-- ERROR -->
+                
+            </mat-form-field> 
+
+            <mat-form-field fxFlex="45">
+              <input matInput type="text" formControlName="lastName"
+                class="form-control" value="" placeholder="Last Name" >
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.lastName.errors?.required">
+                Please enter the Last Name
+              </mat-error>
+              <mat-error *ngIf="clientForm.controls.lastName.hasError('minlength')">
+                Please enter a valid last name
+              </mat-error>
+              <!-- ERROR -->
+
+            </mat-form-field>
+
+          </div>
+
+          <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between  start">
+
+            <mat-form-field fxFlex="25">
+
+              <input matInput formControlName="birth"
+                [matDatepicker]="dtbirth" placeholder="Date of Birth">
+              <mat-datepicker-toggle matSuffix [for]="dtbirth"></mat-datepicker-toggle>
+              <mat-datepicker #dtbirth></mat-datepicker>
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.birth.hasError('required')">
+                Please enter the date
+              </mat-error>
+              <!-- ERROR -->
+
+            </mat-form-field>
+
+            <mat-form-field fxFlex="50">
+              <input matInput formControlName="email"
+                placeholder="Enter your email" type="email" >
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.email.hasError('required')">
+                Please enter the email
+              </mat-error>
+              <mat-error *ngIf="clientForm.controls.email.hasError('email')">
+                Please enter a valid email
+              </mat-error>
+              <!-- ERROR -->
+                
+            </mat-form-field>
+
+            <mat-form-field fxFlex="20">
+              <input matInput formControlName="age" 
+                placeholder="Age" type="number">
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.age.hasError('required')">
+                Please enter the age
+              </mat-error>
+              <mat-error *ngIf="clientForm.controls.age.hasError('min') || clientForm.controls.age.hasError('max')">
+                Please enter the age between 0 and 150
+              </mat-error>
+              <!-- ERROR -->
+
+            </mat-form-field>
+  
+          </div>          
+
+          <div fxFlex="100" fxLayoutAlign="start">
+              <h4>Address:</h4>
+          </div>
+          <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between start">
+            <mat-form-field fxFlex="40" >  
+              <input matInput type="text"  formControlName="street"
+                class="form-control" value="" placeholder="Street" >
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.street.hasError('required')">
+                Please enter the street
+              </mat-error>
+              <!-- ERROR -->
+                                
+            </mat-form-field> 
+            <mat-form-field fxFlex="30">
+              <input matInput type="text"  formControlName="city"
+                class="form-control" value="" placeholder="City" >
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.city.hasError('required')">
+                Please enter the city
+              </mat-error>
+              <!-- ERROR -->
+
+            </mat-form-field>
+ 
+            <mat-form-field fxFlex="20">
+              <mat-select placeholder="State" formControlName="state">
+                <mat-option *ngFor="let s of [ 'SP', 'PR', 'SC', 'RS', 'PA', 'RO']" [value]="s">
+                  {{s}}
+                </mat-option>
+              </mat-select>
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.state.hasError('required')">
+                Please choose the state
+              </mat-error>
+              <!-- ERROR -->              
+
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="100" fxLayoutAlign="start">
+            <h4>Telephones: </h4>
+          </div> 
+
+          <div fxFlex="100"  fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+            <mat-form-field fxFlex="45" >
+              <input matInput type="text"  formControlName="phone1"  
+                class="form-control" value="" placeholder="Telephone 1 " >
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.phone1.hasError('required')">
+                Please choose the phone
+              </mat-error>
+              <!-- ERROR -->
+
+            </mat-form-field>
+            <mat-form-field fxFlex="45" >  
+              <input matInput type="text"  formControlName="phone2" 
+                class="form-control" value="" placeholder="Telephone 2" >
+
+              <!-- ERROR -->
+              <mat-error *ngIf="clientForm.controls.phone2.hasError('required')">
+                Please choose the phone
+              </mat-error>
+              <!-- ERROR -->
+
+            </mat-form-field>
+          </div>
+
+          <!-- ERROR -->
+          <button mat-button color="primary" type="submit" [disabled]="!clientForm.valid" >
+            <mat-icon>done</mat-icon>Submit
+          </button>
+          
+        </form>
+
+      </mat-card-content>
+      <mat-card-footer>
+      </mat-card-footer>
+    </mat-card>
+
+
+  </div>
+</div>
+    

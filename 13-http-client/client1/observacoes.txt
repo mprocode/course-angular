@@ -1,0 +1,5 @@
+adicionar FlexLayoutModule
+
+npm install --save @angular/flex-layout
+import { FlexLayoutModule } from '@angular/flex-layout';
+

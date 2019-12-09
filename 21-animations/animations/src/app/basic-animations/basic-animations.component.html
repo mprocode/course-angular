@@ -1,0 +1,42 @@
+<div fxLayout="row" fxLayoutAlign="start center" class="animation-box"  fxLayoutGap="40px" >
+
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <div [@fade]="fade ? 'in' : 'out' " class="circle shadow"></div>
+        <button (click)="fade = !fade">Fade in / out</button>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <div [@size]="rectSize ? 'enlarge' : 'shrink' " class="rect shadow"></div>
+        <button (click)="rectSize = !rectSize">Enlarge / Shrink</button>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <button (click)="showItem=!showItem">{{showItem?"Hide Item":"Show Item"}}</button>
+        <div @itemAnimate class="item" *ngIf="showItem">New Item</div> 
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <div class="item" *ngFor="let i of items; let idx=index" @itemAnimate>
+            Item {{i}}
+        </div> 
+        <button (click)="addElement()">Add Element</button>
+        <button (click)="removeLast()">Remove Last</button>
+        <button (click)="removeAll()">Remove All</button>
+    </div>
+
+
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <div [@animRotate]="rotate" class="triangle"></div>
+        <button (click)="toggleRotate()">Rotate</button>
+    </div>
+    
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <p [@animText]="animText" class="sometext">Hello World!</p>
+        <button (click)="animateText()">Keyframes</button>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <div [@shakeAnim]="shakeAnim" class="egg"></div>
+        <button (click)="shake()">Shake</button>
+    </div>
+</div>

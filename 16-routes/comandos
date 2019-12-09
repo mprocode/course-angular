@@ -1,0 +1,68 @@
+
+Basico
+
+    ng new 16-routes
+    cd routes/
+    ng add @angular/material
+    npm install --save @angular/flex-layout
+    imports: [
+       MaterialModule,
+    ng g c PageNotFound -m app    
+    ng g c Dvd -m app
+    ng g c Book -m app
+    app.component.html
+
+Criar rotas
+    import { RouterModule, Routes } from '@angular/router';
+    
+    const appRoutes: Routes = [...];
+
+    imports: [
+       MaterialModule,
+       RouterModule,
+    
+    Testar
+
+Criar um módulo somente para rotas
+    ng generate module app-routing -m app --flat
+    //ng generate module --routing Routing --flat
+
+Implementar modelos e servicos
+    models/book.model.ts models/dvd.model.ts
+    ng g s services/Book
+    ng g s services/Dvd
+
+Implementar Lista
+    router: Router
+
+Implementar formulario DVD
+
+Implementar DVD Detail (Parametros na url)
+    adicionar rota
+    private route: ActivatedRoute
+    
+Parametros Opcionais
+
+Estilos com routerLinkActive
+    routerLinkActive
+        <a mat-raised-button routerLink="dvds"  routerLinkActive="mat-accent">DVDs</a>
+        <a mat-raised-button routerLink="books" routerLinkActive="mat-accent">Books</a>
+    Adicionar RouterLinkActiveOptions:
+        [routerLinkActiveOptions]="{ exact: true }"
+
+
+primary
+    ng g c book/BookDetail -m app
+
+
+Modulo Electronics
+    ng generate module Electronics -m app --routing
+    explicar o forChild
+    ng g s services/Electronic
+    ng g c electronics/ElectronicList
+    ng g c electronics/electronic-list/ElectronicDetail
+
+    - Explicar que o modulo de Electronics deve preceder o modulo de rotas
+    explicar o relativeTo
+
+    

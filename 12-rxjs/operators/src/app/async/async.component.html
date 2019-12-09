@@ -1,0 +1,33 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFill>
+  
+  <mat-card class="card">
+      <mat-card-title>Select the options bellow</mat-card-title>
+      <mat-card-content>
+          <mat-selection-list>
+              <mat-list-option *ngFor="let o of options$ | async"> {{o}} </mat-list-option>
+          </mat-selection-list>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+
+      <mat-card-actions>
+        <!-- Error: Creating multiple observables
+        
+        <div *ngIf="user$ | async; else loadingusers1">
+          <p>Name: {{(user$ | async)?.name}}</p>
+          <p>User: {{(user$ | async)?.login}}</p>
+        </div>
+        <ng-template #loadingusers1>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </ng-template>
+        -->
+
+        <div *ngIf="user$ | async as user; else loadingusers2">
+            <p>Name: {{user.name}}</p>
+            <p>User: {{user.login}}</p>
+        </div>
+        <ng-template #loadingusers2>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </ng-template>
+      </mat-card-actions>
+  </mat-card>
+</div>  

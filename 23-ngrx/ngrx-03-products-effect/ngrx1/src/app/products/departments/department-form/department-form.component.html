@@ -1,0 +1,16 @@
+<div>
+  <form [formGroup]="departmentForm" fxLayout="column" fxLayoutAlign="space-between" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+        <input matInput placeholder="Department name" formControlName="name">
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="end end" >
+      <button mat-button color="primary" fxFlex="10" type="submit">Save</button>
+      <button mat-button color="warn" fxFlex="10" type="reset" (click)="cancel()">Cancel</button>
+    </div>
+
+  </form>
+</div>
+  
+  

@@ -1,0 +1,21 @@
+
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" >
+  <span>My store</span>
+  
+  <span ></span>
+
+  <div fxLayoutGap="20px">
+    <!-- With href: the page is load again. This is not a SPA. -->
+    <!-- a mat-raised-button href="/dvds">DVDs</a>
+    <a mat-raised-button href="/books">Books</a -->
+
+    <!-- With routerLink, the router take care of your internal routes 
+    by managing them internally -> This is the real Single Page Application -->
+    <a mat-raised-button routerLink="dvds"  routerLinkActive="mat-accent" >DVDs</a> <!-- [routerLinkActiveOptions]="{ exact: true }" -->
+    <a mat-raised-button routerLink="books" routerLinkActive="mat-accent">Books</a>
+    <a mat-raised-button routerLink="electronics" routerLinkActive="mat-accent">Electronics</a>
+
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,10 @@
+<mat-card class="album mat-elevation-z8" draggable="false" [ngStyle]="backgroundPicture(album.picture)"  >
+    <mat-card-header class="album-name">
+        {{album.name}}
+    </mat-card-header>
+    <mat-card-content fxFill fxLayout="row" fxLayoutAlign="end end" >
+        <button mat-icon-button color="primary" class="button-link" [routerLink]="'myphotos/album/'+ album._id">
+          <mat-icon class="icon">local_see</mat-icon>
+        </button>        
+    </mat-card-content>
+</mat-card>

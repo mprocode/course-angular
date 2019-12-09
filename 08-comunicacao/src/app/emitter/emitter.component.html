@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-content>
+    <section>
+      <h3>Valor = {{valor}}</h3>
+      <app-child-item
+        [item]="'Nome do Item'"
+        (maisUm)="incBy(1)"
+        (maisDois)="incBy(2)"
+        (menosUm)="incBy(-1)"
+        (menosDois)="incBy(-2)"></app-child-item>    
+    </section>
+  </mat-card-content>
+</mat-card>
+
+

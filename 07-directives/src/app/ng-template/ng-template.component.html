@@ -1,0 +1,22 @@
+
+
+
+<p>
+  Before template
+</p>
+
+<mat-checkbox [(ngModel)]="en">Enable / Disable'</mat-checkbox>
+
+<p *ngIf="en else showinside"> 
+  Enabled
+</p>
+
+<ng-template #showinside>
+  <p>
+    Inside template
+  </p>
+</ng-template>
+
+<p>
+  After template
+</p>

@@ -1,0 +1,16 @@
+::ng-deep  .success {
+    color: darkblue;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightgray;
+    font-weight: bold;
+
+}
+
+::ng-deep .error {
+    color: firebrick;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightpink;
+    font-weight: bold;
+}

@@ -1,0 +1,38 @@
+<mat-tab-group>
+    <mat-tab label="New Product">
+        <app-product-form fxFlex (newProduct)="newProductEvent($event)"></app-product-form>        
+    </mat-tab>
+    <mat-tab label="New Department">
+        <app-department-form fxFlex></app-department-form>
+    </mat-tab>
+    <mat-tab label="All Products">
+        <div fxLayout="row" fxLayoutAlign="space-around stretch" >
+            <table fxFlex  mat-table [dataSource]="data" #datatable>
+                
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let p"> {{p.name}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="department">
+                    <th mat-header-cell *matHeaderCellDef> Department </th>
+                    <td mat-cell *matCellDef="let p"> {{p.department.name}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef> Price </th>
+                    <td mat-cell *matCellDef="let p"> {{p.price}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="desc">
+                    <th mat-header-cell *matHeaderCellDef> Description </th>
+                    <td mat-cell *matCellDef="let p"> {{p.description}} </td>
+                </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+            </table>
+                          
+        </div>         
+    </mat-tab>
+  </mat-tab-group>

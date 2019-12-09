@@ -1,0 +1,16 @@
+<div class="box" appBluefy="foobar">
+</div>
+<hr>
+<div style="margin: 20px;">
+  <button (click)="addNew()" >+</button>
+  <button (click)="removeLast()">-</button>
+
+  <p><span *ngFor="let s of v">{{s}} | </span></p>
+</div>
+
+<!-- primeiro assim: <div class="box" *appClone> </div> -->
+<div class="box" 
+  *appClone="let s of v evenColor 'blue' oddColor 'red'; let c=color; let i=index" 
+  [style.color]="c"> {{i}} - {{s}} </div>
+
+

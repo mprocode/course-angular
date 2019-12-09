@@ -1,0 +1,6 @@
+<div class="album-container" fxFill fxFlex appDragScroll>
+  <div  fxLayout="row" fxFill fxLayoutAlign="start end"  draggable="false">
+      <app-album *ngFor="let a of albums" [album]="a" >
+      </app-album>
+  </div>
+</div>

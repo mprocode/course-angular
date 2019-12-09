@@ -1,0 +1,13 @@
+<div  fxLayout="row" fxLayoutAlign="center center" >
+
+  <!--div @animateImages fxLayout="row wrap" fxLayoutAlign="start start" class="homer-container"-->
+  <div @animateImagesGroup fxLayout="row wrap" fxLayoutAlign="start start" class="homer-container">    
+    <div fxFlex="25" *ngFor="let i of images">
+      <img  [src]="i" appImageDirective>
+    </div>
+  </div>
+
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <button (click)="animateAll()">Animate All</button>
+</div>

@@ -1,0 +1,65 @@
+<p>
+  two-way-data-binding works!
+</p>
+
+<!-- Parte 1 -->
+<section>
+  <mat-card>
+    <mat-card-content>
+      <form style="width: 100%;">
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Digite seu Nome" 
+           [(ngModel)]="nome" name="nome1">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Digite seu Nome" 
+           [(ngModel)]="nome" name="nome2">
+        </mat-form-field>
+        <!-- Voce precisa declarar o atributo 'name' -->
+      </form>  
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Nome: {{nome}}</p>
+      <p>Nome: {{nome}}</p>
+      <p>Nome: {{nome}}</p>
+      <p>Nome: {{nome}}</p>
+    </mat-card-actions>  
+  </mat-card>  
+</section>  
+
+<br>
+
+<!-- Parte 2 -->
+<section>
+  <mat-card>
+    <mat-card-title>
+      Cliente
+    </mat-card-title>
+    <mat-card-content>
+      <form style="width: 100%;">
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Nome" 
+           [(ngModel)]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Sobrenome" 
+           [(ngModel)]="cliente.sobrenome" name="sobrenome">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Endereco" 
+            [(ngModel)]="cliente.endereco" name="endereco">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Idade" type="number"
+            [(ngModel)]="cliente.idade" name="idade">
+        </mat-form-field>
+      </form>  
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Nome: {{cliente.nome}}</p>
+      <p>Sobrenome: {{cliente.sobrenome}}</p>
+      <p>Endereco: {{cliente.endereco}}</p>
+      <p>Idade: {{cliente.idade}}</p>
+    </mat-card-actions>  
+  </mat-card>  
+</section>  

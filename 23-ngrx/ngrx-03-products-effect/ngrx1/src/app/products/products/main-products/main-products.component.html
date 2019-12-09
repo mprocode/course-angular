@@ -1,0 +1,33 @@
+<div>
+  <button mat-button color="primary" (click)="addNew()"><mat-icon>add</mat-icon> New Product</button>
+</div>
+
+
+<ng-container *ngIf="!(loadingAll$ | async); else loading">
+
+  <div class="product-form" fxLayout="column" fxLayoutAlign="center stretch"  *ngIf="product!=null">
+    <app-product-form
+      *ngIf="product!=null"
+      [product]="product"
+      [departments]="departments$ | async" 
+      (onSave)="onSave($event)" (onCancel)="onCancel()">
+    </app-product-form>
+  </div>
+
+  <ng-container *ngIf="(products$ | async) as products">
+      <app-products-list [products]="products"
+        (onDelete)="onDelete($event)"
+        (onEdit)="onEdit($event)">
+      </app-products-list>
+  </ng-container>
+</ng-container>
+
+<ng-template #loading>
+  <div fxFill fxLayout="row" fxLayoutAlign="center center" >
+      <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<!--div *ngIf="productsLoading|async" fxFill fxLayout="row" fxLayoutAlign="center center" style="position: fixed; top: 0; left: 0;">
+    <mat-spinner></mat-spinner>
+</div-->

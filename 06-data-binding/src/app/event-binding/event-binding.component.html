@@ -1,0 +1,76 @@
+<p>
+  event-binding works!
+</p>
+
+<!-- Passo 1 -->
+
+<section>
+  <button mat-button (click)="salvar()" color="primary">Salvar</button>
+  <button mat-button (click)="incrementar()" color="warn">{{nomeBotao}}</button>
+</section>
+
+<!-- Passo 2 -->
+
+<section>
+  <button mat-button [disabled]="!btnEnabled" color="warn">Meu Botão</button>
+
+  <button mat-button [disabled]="!btnEnabled" color="primary">Meu Botão</button>
+
+  <button mat-button [disabled]="!btnEnabled" (click)="desabilitar()">Desabilitar Botoes</button>
+
+  <mat-progress-spinner
+  color="primary"
+  value=0
+  [mode]="spinnerMode"></mat-progress-spinner>
+
+</section>
+
+<!-- Passando parametros as funcoes (objetos que descrevem os eventos) - parte 1-->
+
+<section>
+
+  <mat-card>
+    <mat-card-content>
+        <p> 
+          <mat-checkbox color="warn" (change)="cbChange($event)">Desabilitar / Habilitar</mat-checkbox>
+        </p>
+        <p>
+          <mat-form-field>
+            <mat-select placeholder="Escolha uma opção" 
+                        [disabled]="selectDisabled" (selectionChange)="selectionChange($event)">
+              <mat-option value="1">Opção 1</mat-option>
+              <mat-option value="2">Opção 2</mat-option>
+              <mat-option value="3">Opção 3</mat-option>
+            </mat-select>
+          </mat-form-field>    
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Opcao selecionada: {{opcaoSelecionada}}</p>
+    </mat-card-actions>  
+  </mat-card>  
+  
+</section>
+
+<br>
+
+
+<!-- Passando parametros as funcoes (objetos que descrevem os eventos) - parte 2 
+     (quase um 'two way data binding') -->
+
+<section>
+  <mat-card>
+    <mat-card-content>
+      <form style="width: 100%;">
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Digite seu Nome" 
+           [value]="nome" 
+           (input)="nome = $event.target.value">
+        </mat-form-field>
+      </form>  
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Nome: {{nome}}</p>
+    </mat-card-actions>  
+  </mat-card>  
+</section>    

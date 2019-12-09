@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-content>
+    <section>
+      <mat-form-field class="form-field">
+          <input matInput placeholder="Digite seu nome" [(ngModel)]="nomePessoa">
+          <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+  </section>    
+  <section>
+    <app-nome [nome]="nomePessoa"></app-nome>
+  </section>
+  </mat-card-content>
+</mat-card>
+
+

@@ -1,0 +1,41 @@
+
+<p *ngFor="let nome of nomes">{{nome}}</p>
+<p *ngFor="let nome of nomes; let i=index">{{i}}) {{nome}}</p>
+
+
+<mat-card>
+  <mat-card-content>
+    <mat-selection-list #listaNomes>
+      <mat-list-option *ngFor="let nome of nomes">
+        {{nome}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+</mat-card>
+
+<br><br>
+
+
+<!-- https://material.io/tools/icons -->
+
+<mat-card>
+  <mat-card-content>
+      <mat-list>
+          <h3 matSubheader>Nomes</h3>
+          <mat-list-item *ngFor="let nome of nomes">
+             <mat-icon matListIcon>person</mat-icon>
+             <h4 matLine>{{nome}}</h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <h3 matSubheader>Cidades</h3>
+          <mat-list-item *ngFor="let cidade of cidades">
+             <mat-icon matListIcon>location_city</mat-icon>
+             <h4 matLine>{{cidade.nome}}</h4>
+             <p matLine> {{cidade.uf}} </p>
+          </mat-list-item>
+       </mat-list>    
+  </mat-card-content>
+</mat-card>
+
+
+

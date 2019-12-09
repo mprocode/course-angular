@@ -1,0 +1,12 @@
+.rect {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(19, 19, 206);
+    margin: 10px;
+    box-shadow: 5px 5px 2px grey;
+    /*position: absolute;*/
+}
+
+.btn {
+    margin: 10px;
+}

@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.snack_ok {
+    background: darkseagreen;
+    color: black;
+}
+
+.snack_err {
+    background: pink;
+    color: black;
+}

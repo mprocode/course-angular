@@ -1,0 +1,18 @@
+<!-- Parte 1 -->
+
+<p>
+ {{nome}} {{snome}} tem {{idade}} anos.
+</p>
+
+
+<!-- Parte 2 -->
+
+<app-client-component [cliente]="cli"></app-client-component>
+
+
+<h1>Clientes</h1>
+<div *ngFor="let cli of clientes">
+    <app-client-component [cliente]="cli"></app-client-component>
+    <hr>
+</div>
+

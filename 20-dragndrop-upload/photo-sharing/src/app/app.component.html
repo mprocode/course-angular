@@ -1,0 +1,20 @@
+<mat-drawer-container fxFill >
+
+  <mat-drawer #drawer  mode="side">
+    <app-side-nav-menu></app-side-nav-menu>
+  </mat-drawer>
+
+  <mat-toolbar color="primary">
+    <button mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>    
+    <span>Photo Sharing App</span>
+  </mat-toolbar>
+  
+  <router-outlet></router-outlet>
+  
+
+
+</mat-drawer-container>
+
+

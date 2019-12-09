@@ -1,0 +1,22 @@
+<h3>
+  Subjects
+</h3>
+
+<button (click)="connect()">Subscribe to Observable</button>
+<br><br>
+<hr>
+
+<div style="height: 100%; width: 100%; display: flex;">
+  <app-subject-child subjectName="Subject" [subject]="subject" [mainObservable]="dataservice.dataObservable">
+  </app-subject-child>
+  
+  <app-subject-child subjectName="ReplaySubject" [subject]="replaySubject" [mainObservable]="dataservice.dataObservable">
+  </app-subject-child>
+  
+  <app-subject-child subjectName="AsyncSubject" [subject]="asyncSubject" [mainObservable]="dataservice.dataObservable">
+  </app-subject-child>
+  
+  <app-subject-child subjectName="BehaviorSubject" [subject]="behaviorSubject" [mainObservable]="dataservice.dataObservable">
+  </app-subject-child>
+</div>
+ 

@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+@mixin side-nav-menu-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $background-color-degrade: mat-color($primary, default);
+
+  .active-menu-item {
+    background-color: mat-color($primary, default, 0.12) !important;
+    color: mat-color($primary) !important;
+    //font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .profile-background {
+    
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$background-color-degrade+0,d2ebf9+0,feffff+69 */
+    background: $background-color-degrade; /* Old browsers */
+    background: -moz-linear-gradient(top, $background-color-degrade 0%, $background-color-degrade 0%, #feffff 69%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $background-color-degrade 0%,$background-color-degrade 0%,#feffff 69%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $background-color-degrade 0%,$background-color-degrade 0%,#feffff 69%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$background-color-degrade', endColorstr='#feffff',GradientType=0 ); /* IE6-9 */      
+  }
+}

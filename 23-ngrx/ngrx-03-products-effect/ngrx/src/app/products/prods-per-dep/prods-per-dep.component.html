@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="start start" >
+
+<mat-nav-list fxFlex>
+  <h2 mat-subheader>Departments List</h2>
+  <a mat-list-item *ngFor="let d of departments$ | async; let i=index" routerLink="{{d._id}}" >
+    <mat-icon mat-list-icon>library_books</mat-icon>
+    <h4 mat-line>{{d.name}}</h4>
+  </a>
+</mat-nav-list>
+
+<router-outlet></router-outlet>
+
+</div>

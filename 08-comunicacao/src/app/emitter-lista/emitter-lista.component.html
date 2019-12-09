@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-content>
+    <section>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Digite o nome do Cliente" [(ngModel)]="nome">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+          <input matInput placeholder="Idade do Cliente" [(ngModel)]="idade" type="number">
+      </mat-form-field>
+      <button mat-mini-fab color="primary" (click)="novoCliente()"><mat-icon>check</mat-icon></button>
+    </section>
+
+  </mat-card-content>
+</mat-card>
+
+<br><br>
+<app-item-cliente 
+  *ngFor="let cli of clientes"
+  [cliente]="cli"
+  (salvarCliente)="salvarCliente($event)"
+  (apagarCliente)="apagarCliente($event)">
+</app-item-cliente>
+
+<!--
+<app-hero-detail *ngFor="let hero of heroes" [hero]="hero"></app-hero-detail>
+-->
